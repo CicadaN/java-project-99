@@ -38,3 +38,4 @@ out/
 .vscode/
 /.github/workflows/README.md
 /app/build/
+/node_modules/

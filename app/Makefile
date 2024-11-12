@@ -1,38 +1,22 @@
-.DEFAULT_GOAL := build-run
-
-setup:
-	./gradlew wrapper --gradle-version 8.5
-
-clean:
-	./gradlew clean
-
 build:
-	./gradlew clean build
-
-install:
-	./gradlew clean install
+	make -C app build
 
 run-dist:
-# версия для винды
-#	.\build\install\app\bin\app
-# версия для linux
-	./build/install/app/bin/app
-
-run:
-	./gradlew run
+	make -C app run-dist
 
 test:
-	./gradlew test
+	make -C app test
 
 report:
-	./gradlew jacocoTestReport
+	make -C app report
 
 lint:
-	./gradlew checkstyleMain
+	make -C app lint
 
-check-deps:
-	./gradlew dependencyUpdates -Drevision=release
+check:
+	make -C app check
 
-build-run: build run
+install:
+	make -C app install
 
 .PHONY: build
