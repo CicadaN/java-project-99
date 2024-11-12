@@ -1,10 +1,8 @@
 FROM gradle:8.5.0-jdk21
 
-WORKDIR /app
+WORKDIR /
 
-COPY /app .
-
-RUN chmod +x gradlew
+COPY / .
 
 RUN ./gradlew installDist
 
